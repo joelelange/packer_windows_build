@@ -1,8 +1,8 @@
-## Custom Windows 2019 AMI using Packer
+## Custom Windows 2020 AMI using Packer
 
-  * I'll also show you how to use Ansible to configure your new Windows 2019 server!
+  * I'll also show you how to use Ansible to configure your new Windows 2022 server!
   
-I’m going to follow the steps from the hashicorp website and create a customised Windows 2019 server and setup winrm, and set the Administrator password.
+I’m going to follow the steps from the hashicorp website and create a customised Windows 2022 server and setup winrm, and set the Administrator password.
 
 Once the AMI image is ready, were going to build an instance bases on our new AMI image, then get Ansible to setup the server for us.
 
@@ -42,14 +42,14 @@ If you have question, pop them in the comments and I’ll reply as soon as I can
 Feel free to clone my repo. Please give the repo a like and follow me if this code has helped you.
 
 ```
-git clone https://github.com/dmccuk/packer_windows_build.git
+git clone https://github.com/joelelange/packer_windows_build.git
 cd packer_windows_build
 ```
 
 now build the packer image:
 ```
-packer validate windows_2019.pkr.hcl
-packer build windows_2019.pkr.hcl
+packer validate windows_2022.pkr.hcl
+packer build windows_2022.pkr.hcl
 ```
 
 The build process takes around 5 minutes...
@@ -70,7 +70,7 @@ Build 'learn-packer.amazon-ebs.firstrun-windows' finished after 8 minutes 503 mi
 
 ==> Builds finished. The artifacts of successful builds are:
 --> learn-packer.amazon-ebs.firstrun-windows: AMIs were created:
-eu-west-2: ami-0636bd65d5cd8dce4
+us-east-1: ami-0636bd65d5cd8dce4
 ```
 
 ### Create an EC2 instance fom the AMI
